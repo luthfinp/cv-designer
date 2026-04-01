@@ -1,126 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Graphic Designer - Gemini Style</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #131314;
-            --card-bg: #1e1f20;
-            --text-main: #e3e3e3;
-            --text-dim: #b4b4b4;
-            --accent-gradient: linear-gradient(45deg, #4285f4, #9b72cb, #d96570);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+<title>Portfolio - Graphic Designer</title>
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+<style>
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* =========================
+   FUNDAMENTAL DESIGN SYSTEM
+========================= */
 
-        .subtitle {
-            color: var(--text-dim);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
+:root{
+    /* 60 : 30 : 10 */
+    --white:#ffffff;
+    --gray:#f3f3f4;
+    --darkgray:#777;
+    --black:#1c1c1e;
+    --accent:#4f46e5; /* bisa ganti warna personal */
 
-        .section {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-        }
+    --radius:18px;
+}
 
-        h2 {
-            font-size: 1.2rem;
-            color: #8ab4f8;
-            margin-top: 0;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
 
-        .skill-tag {
-            display: inline-block;
-            background: #333;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 4px;
-            color: var(--text-dim);
-        }
+body{
+    background:var(--white);
+    color:var(--black);
+    line-height:1.6;
+}
 
-        .experience-item {
-            border-left: 2px solid #444;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
+/* =========================
+   LAYOUT
+========================= */
 
-        p {
-            line-height: 1.6;
-            color: var(--text-dim);
-        }
-    </style>
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:28px 0;
+}
+
+.logo{
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--black);
+    font-size:14px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    padding:80px 0;
+}
+
+.profile{
+    width:260px;
+    height:260px;
+    background:var(--gray);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+/* FOTO USER MASUK SINI */
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-text h1{
+    font-size:42px;
+    font-weight:600;
+}
+
+.hero-text p{
+    margin-top:15px;
+    color:var(--darkgray);
+}
+
+.button{
+    margin-top:25px;
+    display:inline-block;
+    padding:12px 22px;
+    background:var(--accent);
+    color:white;
+    border-radius:999px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* =========================
+   SECTION GENERAL
+========================= */
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    font-size:26px;
+    margin-bottom:30px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:var(--gray);
+    border-radius:var(--radius);
+    padding:40px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skill{
+    background:var(--gray);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:14px;
+}
+
+/* =========================
+   WORK GRID
+========================= */
+
+.works{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.work-card{
+    background:var(--gray);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.work-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.work-info{
+    padding:20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+    background:var(--gray);
+    padding:50px;
+    border-radius:var(--radius);
+}
+
+footer{
+    text-align:center;
+    padding:40px 0;
+    font-size:13px;
+    color:var(--darkgray);
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <header>
-        <h1>Nama Lengkap Anda</h1>
-        <div class="subtitle">Graphic Designer & Visual Storyteller</div>
-    </header>
 
-    <div class="section">
-        <h2>Tentang Saya</h2>
-        <p>Seorang desainer grafis yang fokus pada estetika minimalis dan fungsional. Berpengalaman dalam menciptakan identitas visual yang kuat menggunakan teknologi AI dan desain konvensional.</p>
-    </div>
+<nav>
+<div class="logo">YourName®</div>
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Work</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
 
-    <div class="section">
-        <h2>Keahlian</h2>
-        <div class="skill-tag">Adobe Photoshop</div>
-        <div class="skill-tag">UI/UX Design</div>
-        <div class="skill-tag">Brand Identity</div>
-        <div class="skill-tag">After Effects</div>
-        <div class="skill-tag">Figma</div>
-    </div>
+<!-- HERO -->
+<section class="hero">
 
-    <div class="section">
-        <h2>Pengalaman Kerja</h2>
-        <div class="experience-item">
-            <strong>Senior Designer - Creative Agency</strong>
-            <div style="font-size: 0.8rem; color: #666;">2022 - Sekarang</div>
-            <p>Memimpin tim kreatif dalam pembuatan kampanye digital skala nasional.</p>
-        </div>
-    </div>
+<div class="profile">
+<!-- GANTI FOTO DISINI -->
+<img src="your-photo.jpg" alt="profile">
+</div>
 
-    <div class="section">
-        <h2>Kontak</h2>
-        <p>Email: emailanda@domain.com<br>Portfolio: behance.net/anda</p>
-    </div>
+<div class="hero-text">
+<h1>Graphic Designer</h1>
+<p>
+Creating minimal visual identity, branding, and digital experiences
+with clarity and strong visual hierarchy.
+</p>
+
+<a class="button" href="#">View Portfolio</a>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+Saya adalah Graphic Designer yang fokus pada branding,
+social media design, dan visual storytelling dengan pendekatan minimal,
+clean, dan modern.
+</div>
+
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+<div class="skill">Branding</div>
+<div class="skill">Social Media Design</div>
+<div class="skill">UI Design</div>
+<div class="skill">Typography</div>
+<div class="skill">Photoshop</div>
+<div class="skill">Illustrator</div>
+</div>
+
+</section>
+
+<!-- WORK -->
+<section>
+<h2 class="section-title">Selected Works</h2>
+
+<div class="works">
+
+<div class="work-card">
+<img src="work1.jpg">
+<div class="work-info">Brand Identity</div>
+</div>
+
+<div class="work-card">
+<img src="work2.jpg">
+<div class="work-info">Social Media Campaign</div>
+</div>
+
+<div class="work-card">
+<img src="work3.jpg">
+<div class="work-info">Poster Design</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section>
+
+<div class="contact">
+<h2>Let's Work Together</h2>
+<p>Email: your@email.com</p>
+<a class="button" href="#">Contact Me</a>
+</div>
+
+</section>
+
+<footer>
+© 2026 Portfolio Graphic Designer
+</footer>
+
 </div>
 
 </body>
